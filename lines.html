@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Remove new lines</title>
+</head>
+<body style="display:flex;flex-direction:column;justify-content:center;align-items:center;min-height:100vh;background-image:linear-gradient(to bottom right, red, purple,orange,pink);">
+    <div class="text">
+        <textarea name="myText" id="myText" style="resize:none;width:300px;height:400px;outline:none;border:1px solid black;border-radius:3px;font-size:1.2rem;font-family:Times New Roman;"></textarea>
+    </div>
+    <button id="remove"style="margin:4px;font-size:2rem;">Remove Lines</button>
+    <button id="copy"style="margin:4px;font-size:2rem;">Copy Text</button>
+    <button id="tts" style="margin:5px;font-size:2rem;">Speak</button>
+    <button id="stopAndClear"style="margin:5px;font-size:2rem;">Stop And Clear</button>
+
+    <script type="text/javascript" charset="utf-8">
+        let remove = document.getElementById('remove');
+        let text = document.getElementById('myText');
+        let copy = document.getElementById('copy')
+        let ttsBTN = document.getElementById('tts');
+        let stop = document.getElementById('stopAndClear');
+        stop.addEventListener('click',()=>{
+            text.value ="";
+            speechSynthesis.cancel();
+        })
+        remove.addEventListener('click', ()=> {
+            let newText = text.value.split(/\r\n|\r|\n/g).join(" ")
+            text.value = newText
+        })
+        copy.addEventListener('click', ()=> {
+            text.select();
+            text.setSelectionRange(0, 999999);
+            navigator.clipboard.writeText(text.value);
+        })
+        let sentenceArr = [];
+        let sentenceFunc = ()=> {
+            let myText = text.value
+            sentenceArr = myText.split(/[.?]\s/g)
+        }
+        let sentenceBundle = [];
+        let sentenceBundleFunc = ()=> {
+            for (let i = 0; i < sentenceArr.length; i += 30) {
+                let chunk = sentenceArr.slice(i, i+30);
+                sentenceBundle.push(chunk.toString().replace(/[.!?]/g,/[.!?]\s/g));
+            }
+        }
+        const speak = (textArr)=> {
+            if (!speechSynthesis.speaking) {
+                for (let i = 0; i < textArr.length; i++) {
+                    let speechUtterance = new SpeechSynthesisUtterance();
+                    speechUtterance.text = textArr[i];
+                    speechUtterance.lang = 'en-US';
+                    speechSynthesis.speak(speechUtterance);
+                }
+                console.log('Speaking...')
+            }
+        }
+        ttsBTN.addEventListener('click', ()=> {
+            sentenceFunc();
+            sentenceBundleFunc();
+            speak(sentenceBundle);
+        })
+        // setTimeout(()=> {
+        //    sentenceFunc()
+        //    console.log(sentenceArr)
+        //    sentenceBundleFunc();
+        //    console.log(sentenceBundle)
+        //}, 10000)
+    </script>
+</body>
+</html>
