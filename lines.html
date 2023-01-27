@@ -48,7 +48,7 @@
         let sentenceBundleFunc = ()=> {
             for (let i = 0; i < sentenceArr.length; i += 30) {
                 let chunk = sentenceArr.slice(i, i+30);
-                sentenceBundle.push(chunk.toString().replace(/[.!?]/g,/[.!?]\s/g));
+                sentenceBundle.push(chunk.toString());
             }
         }
         const speak = (textArr)=> {
