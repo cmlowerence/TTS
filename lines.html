@@ -34,6 +34,11 @@
             text.setSelectionRange(0, 999999);
             navigator.clipboard.writeText(text.value);
         })
+        let clearBundle = (arr)=> {
+            for (let i =0;i<arr.length;i++){
+                arr.pop();
+            }
+        }
         let sentenceArr = [];
         let sentenceFunc = ()=> {
             let myText = text.value
@@ -55,6 +60,7 @@
                     speechSynthesis.speak(speechUtterance);
                 }
                 console.log('Speaking...')
+                clearBundle(textArr);
             }
             textArr =[];
         }
