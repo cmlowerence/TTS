@@ -21,10 +21,6 @@
         let copy = document.getElementById('copy')
         let ttsBTN = document.getElementById('tts');
         let stop = document.getElementById('stopAndClear');
-        stop.addEventListener('click',()=>{
-            text.value ="";
-            speechSynthesis.cancel();
-        })
         remove.addEventListener('click', ()=> {
             let newText = text.value.split(/\r\n|\r|\n/g).join(" ")
             text.value = newText
@@ -68,6 +64,11 @@
             sentenceFunc();
             sentenceBundleFunc();
             speak(sentenceBundle);
+        })
+        stop.addEventListener('click',()=>{
+            text.value ="";
+            speechSynthesis.cancel();
+            clearBundle(sentenceBundle);
         })
         // setTimeout(()=> {
         //    sentenceFunc()
