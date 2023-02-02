@@ -3,6 +3,7 @@ const speakBtn = document.getElementById('speak');
 const speak = (text)=> {
     speechSynthesis.speak(new SpeechSynthesisUtterance(text));
 }
+speak(' ');
 const advSpeak = (grandText, btn = speakBtn)=> {
     let textLines = grandText.split(/\r\n|\r|\n/g).join(' ').split('. ');
     for (let i = 0; i < textLines.length; i++) {
