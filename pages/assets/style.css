@@ -1,0 +1,46 @@
+<style type="text/css" media="all">
+html {
+    scroll-behavior: smooth;
+}
+body {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 100vw;
+    min-height: 100vh;
+    gap: 10px;
+    background-image: radial-gradient(#00B7FF,#00FF6C,#B4FF00);
+}
+#textBox {
+    padding: 4px;
+    font-size: 20px;
+    border: 2px solid gray;
+    border-radius: 10px;
+    height: 600px;
+    width: 500px;
+    outline: none;
+    resize: none;
+    box-shadow: 0 0 5px #C9C9C9;
+    transition: 0.3s ease-in-out;
+}
+#textBox:focus {
+    border: 3px solid #6FD3FF;
+    background-color: #EBEBEB;
+    box-shadow: 0 0 5px #BDECFF;
+}
+.funcBtn {
+    background-color: #00CAFF;
+    padding: 3px;
+    border-radius: 3px;
+    color: #292929;
+    font-size: 25px;
+    outline: none;
+    border: 2px solid #0085FF;
+    transition: 0.3s ease-in-out;
+}
+.funcBtn:hover {
+    background-color: #79C8DC;
+    color: #000;
+}
