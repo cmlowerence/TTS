@@ -14,6 +14,7 @@ body {
     background-image: radial-gradient(#00B7FF,#00FF6C,#B4FF00);
 }
 #textBox {
+    scroll-behavior: smooth;
     padding: 4px;
     font-size: 20px;
     border: 2px solid gray;
@@ -21,6 +22,8 @@ body {
     height: 600px;
     width: 500px;
     outline: none;
+    font-family: Times New Roman cursive;
+    font-size: 1.5rem;
     resize: none;
     box-shadow: 0 0 5px #C9C9C9;
     transition: 0.3s ease-in-out;
@@ -31,16 +34,45 @@ body {
     box-shadow: 0 0 5px #BDECFF;
 }
 .funcBtn {
-    background-color: #00CAFF;
+    background-color: #00FFF2;
     padding: 3px;
-    border-radius: 3px;
+    border-radius: 5px;
     color: #292929;
-    font-size: 25px;
+    font-size: 2rem;
+    font-family: Times New Roman cursive;
     outline: none;
-    border: 2px solid #0085FF;
+    border: 1px solid #A500FF;
     transition: 0.3s ease-in-out;
+    cursor: pointer;
 }
 .funcBtn:hover {
     background-color: #79C8DC;
     color: #000;
+}
+#myFile{
+    display: none;
+}
+.fileLabel{
+    font-size: 2.5rem;
+}
+.fileLabelText{
+    font-size: 1.5rem;
+    font-family: Times New Roman cursive;
+}
+.labelFile{
+    margin-top: 15px;
+    padding:5px;
+    gap: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid #E900FF;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+.labelFile:hover{
+    box-shadow: 4px 4px 10px rgba(255,255,255,0.5),-4px 4px 10px rgba(255,255,255,0.5),4px -4px 10px rgba(255,255,255,0.5),-4px -4px 10px rgba(255,255,255,0.5);
 }

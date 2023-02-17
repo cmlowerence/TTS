@@ -41,3 +41,22 @@ setInterval(()=> {
         textBox.style = "background-color:#fff;"
     }
 }, 100);
+
+const readFile =(fileSelector)=>{
+    const file = fileSelector.files[0];
+    if (file){
+    let myText="";
+        const reader = new FileReader();
+        reader.addEventListener('load',()=>{
+            const fileTxt = reader.result
+            textBox.value=fileTxt;
+            // advSpeak(fileTxt);
+        });
+        reader.readAsText(file);
+    }
+}
+let myFile = document.getElementById('myFile');
+myFile.addEventListener('change',()=>{
+    readFile(myFile);
+})
+const filePlayBtn = document.getElementById('playFile');

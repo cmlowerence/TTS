@@ -14,7 +14,15 @@
         <button id="restar"class="funcBtn" onclick="restart()">Restart</button>
         <button id="speak"class="funcBtn"onclick="advSpeak(textBox.value)">Listen</button>
         <button id="stop" class="funcBtn"onclick="stop()">Stop</button>
+        
+        <label for="myFile" class="labelFile">
+            <span class="fileLabelText">Upload file</span>
+            <ion-icon name="document-text-outline" class="fileLabel"></ion-icon>
+        <input type="file" name="textFile" id="myFile">
+        </label>
     </div>
     <script src="./assets/script.js" type="text/javascript" charset="utf-8"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
