@@ -1,50 +1,53 @@
-<style type="text/css" media="all">
+@font-face {
+    font-family: Caveat;
+    src: url(./Handlee-Regular.ttf);
+}
 html {
     scroll-behavior: smooth;
 }
 body {
     position: relative;
-    overflow: hidden;
+    overflow-x: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     min-width: 100vw;
     min-height: 100vh;
-    gap: 10px;
+    gap: 20px;
     background: rgb(238,174,202);
     background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(0,117,255,1) 100%);
 }
-.hamburger{
+.hamburger {
     display: grid;
     row-gap: 4px;
     position: absolute;
     top: .5rem;
     left: .75rem;
 }
-.hamburger .burgerline{
+.hamburger .burgerline {
     display: block;
     height: 2px;
     background-color: #fff;
     border-radius: 2px;
     transition: .3s ease-in-out;
 }
-.hamburger .burgerline:nth-child(1){
+.hamburger .burgerline:nth-child(1) {
     width: 1.5rem;
 }
-.hamburger.active .burgerline:nth-child(1){
+.hamburger.active .burgerline:nth-child(1) {
     width: .75rem;
 }
-.hamburger .burgerline:nth-child(2){
+.hamburger .burgerline:nth-child(2) {
     width: .75rem;
 }
-.hamburger.active .burgerline:nth-child(2){
+.hamburger.active .burgerline:nth-child(2) {
     width: 1rem;
 }
-.hamburger .burgerline:nth-child(3){
+.hamburger .burgerline:nth-child(3) {
     width: 1rem;
 }
-.hamburger.active .burgerline:nth-child(3){
+.hamburger.active .burgerline:nth-child(3) {
     width: 1.5rem;
 }
 #textBox {
@@ -57,13 +60,12 @@ body {
     height: 600px;
     width: 500px;
     outline: none;
-    font-family: Times New Roman cursive;
+    font-family: Caveat;
     font-size: 1.5rem;
     resize: none;
     box-shadow: 0 0 5px #C9C9C9;
     transition: 0.3s ease-in-out;
-    background-color: transparent;
-    webkit-
+    background-color: transparent !important;
     color: #fff;
 }
 #textBox:focus {
@@ -81,7 +83,7 @@ body {
     border-radius: 7px;
     color: #292929;
     font-size: 1rem;
-    font-family: Times New Roman cursive;
+    font-family: Caveat;
     outline: none;
     border: none;
     transition: 0.3s ease-in-out;
@@ -103,7 +105,7 @@ body {
 }
 .fileLabelText {
     font-size: 1rem;
-    font-family: Times New Roman cursive;
+    font-family: Caveat;
 }
 .labelFile {
     color: #fff;
