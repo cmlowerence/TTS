@@ -9,20 +9,28 @@
     <link rel="stylesheet" href="./assets/responsive.css" type="text/css" media="all" />
 </head>
 <body>
+    <nav class="navbar">
+        <div class="hamburger">
+            <div class="burgerline"></div>
+            <div class="burgerline"></div>
+            <div class="burgerline"></div>
+        </div>
+    </nav>
     <textarea name="text" id="textBox"></textarea>
     <div class="functions">
-        <button id="restar"class="funcBtn" onclick="restart()">Restart</button>
-        <button id="speak"class="funcBtn"onclick="advSpeak(textBox.value)">Listen</button>
-        <button id="stop" class="funcBtn"onclick="stop()">Stop</button>
-        
+        <div class="funcBtns">
+            <button id="restar"class="funcBtn" onclick="restart()">Restart</button>
+            <button id="speak"class="funcBtn"onclick="advSpeak(textBox.value)">Listen</button>
+            <button id="stop" class="funcBtn"onclick="stop()">Stop</button>
+        </div>
         <label for="myFile" class="labelFile">
             <span class="fileLabelText">Upload file</span>
-            <ion-icon name="document-text-outline" class="fileLabel"></ion-icon>
-        <input type="file" name="textFile" id="myFile" accept="text">
+            <ion-icon name="cloud-upload-outline" class="fileLabel"></ion-icon>
+            <input type="file" name="textFile" id="myFile" accept="text">
         </label>
     </div>
     <script src="./assets/script.js" type="text/javascript" charset="utf-8"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 </html>

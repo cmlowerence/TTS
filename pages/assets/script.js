@@ -1,5 +1,6 @@
 const textBox = document.getElementById('textBox');
 const speakBtn = document.getElementById('speak');
+let myFile = document.getElementById('myFile');
 const speak = (text)=> {
     speechSynthesis.speak(new SpeechSynthesisUtterance(text));
 }
@@ -32,7 +33,8 @@ const restart = ()=> {
 const stop = ()=> {
     speechSynthesis.cancel();
     textBox.value = '';
-    speakBtn.innerHTML = 'Listen'
+    speakBtn.innerHTML = 'Listen';
+    myFile.value= '';
 }
 setInterval(()=> {
     if (speechSynthesis.speaking) {
@@ -50,13 +52,21 @@ const readFile =(fileSelector)=>{
         reader.addEventListener('load',()=>{
             const fileTxt = reader.result
             textBox.value=fileTxt;
-            // advSpeak(fileTxt);
         });
         reader.readAsText(file);
     }
 }
-let myFile = document.getElementById('myFile');
+
 myFile.addEventListener('change',()=>{
     readFile(myFile);
 })
 const filePlayBtn = document.getElementById('playFile');
+
+
+
+
+// Hamburger JS
+const burger = document.querySelectorAll('.hamburger')[0];
+burger.addEventListener('click',()=>{
+    burger.classList.toggle('active');
+})

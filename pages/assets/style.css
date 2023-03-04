@@ -3,6 +3,7 @@ html {
     scroll-behavior: smooth;
 }
 body {
+    position: relative;
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -11,13 +12,47 @@ body {
     min-width: 100vw;
     min-height: 100vh;
     gap: 10px;
-    background-image: radial-gradient(#00B7FF,#00FF6C,#B4FF00);
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(0,117,255,1) 100%);
+}
+.hamburger{
+    display: grid;
+    row-gap: 4px;
+    position: absolute;
+    top: .5rem;
+    left: .75rem;
+}
+.hamburger .burgerline{
+    display: block;
+    height: 2px;
+    background-color: #fff;
+    border-radius: 2px;
+    transition: .3s ease-in-out;
+}
+.hamburger .burgerline:nth-child(1){
+    width: 1.5rem;
+}
+.hamburger.active .burgerline:nth-child(1){
+    width: .75rem;
+}
+.hamburger .burgerline:nth-child(2){
+    width: .75rem;
+}
+.hamburger.active .burgerline:nth-child(2){
+    width: 1rem;
+}
+.hamburger .burgerline:nth-child(3){
+    width: 1rem;
+}
+.hamburger.active .burgerline:nth-child(3){
+    width: 1.5rem;
 }
 #textBox {
     scroll-behavior: smooth;
-    padding: 4px;
+    padding-inline: 1rem;
+    padding-block: 1.5rem;
     font-size: 20px;
-    border: 2px solid gray;
+    border: 2px solid #FF7100;
     border-radius: 10px;
     height: 600px;
     width: 500px;
@@ -27,52 +62,64 @@ body {
     resize: none;
     box-shadow: 0 0 5px #C9C9C9;
     transition: 0.3s ease-in-out;
+    background-color: transparent;
+    webkit-
+    color: #fff;
 }
 #textBox:focus {
     border: 3px solid #6FD3FF;
-    background-color: #EBEBEB;
     box-shadow: 0 0 5px #BDECFF;
 }
+.funcBtns {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: .5rem;
+}
 .funcBtn {
-    background-color: #00FFF2;
-    padding: 3px;
-    border-radius: 5px;
+    padding-inline: .775rem;
+    padding-block: .4rem;
+    border-radius: 7px;
     color: #292929;
-    font-size: 2rem;
+    font-size: 1rem;
     font-family: Times New Roman cursive;
     outline: none;
-    border: 1px solid #A500FF;
+    border: none;
     transition: 0.3s ease-in-out;
     cursor: pointer;
+    background-color: #7E2CE9;
+    color: #fff;
+    font-weight: 600;
 }
 .funcBtn:hover {
-    background-color: #79C8DC;
+    background-color: rgba(255,39,147,.67);
     color: #000;
+    box-shadow: 0 0 5px #BDECFF;
 }
-#myFile{
+#myFile {
     display: none;
 }
-.fileLabel{
-    font-size: 2.5rem;
-}
-.fileLabelText{
+.fileLabel {
     font-size: 1.5rem;
+}
+.fileLabelText {
+    font-size: 1rem;
     font-family: Times New Roman cursive;
 }
-.labelFile{
+.labelFile {
+    color: #fff;
     margin-top: 15px;
-    padding:5px;
+    padding: 5px;
     gap: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    border: 1px solid #E900FF;
+    background-color: rgba(255,39,147,.67);
     border-radius: 10px;
     font-weight: 600;
     cursor: pointer;
     transition: 0.3s ease-in-out;
 }
-.labelFile:hover{
+.labelFile:hover {
     box-shadow: 4px 4px 10px rgba(255,255,255,0.5),-4px 4px 10px rgba(255,255,255,0.5),4px -4px 10px rgba(255,255,255,0.5),-4px -4px 10px rgba(255,255,255,0.5);
 }
