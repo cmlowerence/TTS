@@ -57,8 +57,9 @@ const readFile =(fileSelector)=>{
     }
 }
 
-myFile.addEventListener('change',()=>{
+myFile.addEventListener('input',()=>{
     readFile(myFile);
+    myFile.value='';
 })
 const filePlayBtn = document.getElementById('playFile');
 
