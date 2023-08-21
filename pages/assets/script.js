@@ -2,7 +2,9 @@ const textBox = document.getElementById('textBox');
 const speakBtn = document.getElementById('speak');
 let myFile = document.getElementById('myFile');
 const speak = (text)=> {
-    speechSynthesis.speak(new SpeechSynthesisUtterance(text));
+    utterance = new SpeechSynthesisUtterance() 
+    utterance.lang = "en-US";
+    speechSynthesis.speak(utterance(text));
 }
 speak(' ');
 const advSpeak = (grandText, btn = speakBtn)=> {
