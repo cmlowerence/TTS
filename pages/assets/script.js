@@ -4,7 +4,7 @@ let myFile = document.getElementById('myFile');
 const speak = (text)=> {
     utterance = new SpeechSynthesisUtterance() 
     utterance.lang = "en-US";
-    speechSynthesis.speak(utterance(text));
+    speechSynthesis.speak(SpeechSynthesisUtterance(text));
 }
 speak(' ');
 const advSpeak = (grandText, btn = speakBtn)=> {
