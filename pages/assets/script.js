@@ -4,6 +4,11 @@ let myFile = document.getElementById('myFile');
 const speak = (text)=> {
     utterance = new SpeechSynthesisUtterance() 
     utterance.lang = "en-US";
+    try{
+        speechSynthesis.speak(new SpeechSynthesisUtterance(text));
+    }except Exception as e{
+        textBox.innerText = e
+    }
     speechSynthesis.speak(new SpeechSynthesisUtterance(text));
 }
 speak(' ');
